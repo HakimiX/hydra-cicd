@@ -10,4 +10,3 @@ Automation and continuous monitoring throughout the lifecycle of apps, from inte
 
 ## Overview
 
-![](resources/images/hydra-cicd-overview.png)
