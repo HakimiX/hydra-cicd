@@ -23,7 +23,7 @@ docker context use docker-hydra-cicd
 kubectx docker-hydra-cicd
 kubens docker-hydra-cicd
 
-# Server running on 
+# Server running on service port
 http://localhost:30176/ 
 ```
 
