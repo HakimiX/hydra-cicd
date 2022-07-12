@@ -22,6 +22,9 @@ docker context use docker-hydra-cicd
 # Use kubernetes context and namespace
 kubectx docker-hydra-cicd
 kubens docker-hydra-cicd
+
+# Server running on 
+http://localhost:30176/ 
 ```
 
 
