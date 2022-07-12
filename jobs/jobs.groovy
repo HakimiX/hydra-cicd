@@ -43,7 +43,7 @@ pipelineJob('deploy-applications') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/HakimiX/jenkins-docker-desktop') // The main infrastructure repo
+                        url('https://github.com/HakimiX/hydra-cicd') // The main infrastructure repo
                         credentials('GITHUB_ACCESS_TOKEN')
                     }
                     branch('master')
