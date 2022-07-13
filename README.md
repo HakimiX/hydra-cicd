@@ -30,3 +30,4 @@ http://localhost:30176/
 
 ### Sources
 * [jenkins-docker-desktop](https://github.com/HakimiX/jenkins-docker-desktop)
+* [helm arm64](https://blog.differentpla.net/blog/2021/12/20/installing-helm/)
