@@ -1,0 +1,31 @@
+podTemplate(label: 'builder',
+            imagePullSecrets: [ 'registry-secret' ],
+            containers: [
+                    containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
+            ],
+            volumes: [
+                    hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock'),
+            ]) {
+
+        node('builder') {
+            stage('Checkout') {
+                checkout scm
+            }
+
+            stage('Debug'){
+              sh "echo outside of container..."
+            }
+
+            stage('Build'){
+              container('docker') {
+                sh 'docker build -f ./docker/Dockerfile.deploy -t deploy-pipeline:latest docker/'
+              }
+            }
+
+            stage('Run') {
+              container('docker') {
+                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock -t --rm deploy-pipeline:latest'
+              }
+            }
+        }
+    }

@@ -1,0 +1,23 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=nonintercative
+
+# Install Python
+RUN apt-get -y update ; apt-get install -y apt-utils software-properties-common
+RUN apt-get install -y python3 && ln -sf python3 /usr/bin/python
+RUN apt-get update ; apt-get install -y git curl gradle wget tar unzip gzip python3-pip
+
+RUN pip3 install docker gitpython
+
+WORKDIR /app
+
+# Install Helm3
+RUN wget https://get.helm.sh/helm-v3.7.2-linux-arm64.tar.gz
+RUN tar xfz ./helm-v3.7.2-linux-arm64.tar.gz
+RUN ln -s /app/linux-arm64/helm /usr/bin/helm3
+RUN helm version
+
+COPY main /root/
+
+WORKDIR /root/scripts
+ENTRYPOINT ["sh", "entrypoint.sh"]
