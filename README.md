@@ -7,7 +7,7 @@ Automation and continuous monitoring throughout the lifecycle of apps, from inte
 **Technologies**: Jenkins _(jdk11)_, Docker, Kubernetes, Python, and Bash. 
 
 * [Overview](#overview)
-* [Docker Desktop]
+* [Docker Desktop](#docker-desktop)
 * [Sources](#sources)
 
 ## Overview
