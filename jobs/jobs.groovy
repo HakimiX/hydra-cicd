@@ -74,3 +74,17 @@ listView('Deploy') {
         lastFailure()
     }
 }
+
+listView('Automated') {
+    jobs {
+        regex('.*automated.*')
+    }
+    columns {
+        status()
+        weather()
+        buildButton()
+        name()
+        lastSuccess()
+        lastFailure()
+    }
+}
