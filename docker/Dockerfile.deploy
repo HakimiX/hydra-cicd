@@ -15,7 +15,7 @@ WORKDIR /app
 RUN wget https://get.helm.sh/helm-v3.7.2-linux-arm64.tar.gz
 RUN tar xfz ./helm-v3.7.2-linux-arm64.tar.gz
 RUN mv linux-arm64/helm /usr/local/bin
-RUN ln -s /app/linux-arm64/helm /usr/local/bin
+# RUN ln -s /app/linux-arm64/helm /usr/local/bin
 RUN helm version
 
 COPY main /root/
